@@ -77,6 +77,10 @@ export default {
     transition: border 0.4s;
     user-select: none;
     cursor: pointer;
+
+    @media (max-width: 767px) {
+      height: 90px;
+    }
   }
 
   &__elem-icon {
@@ -88,6 +92,16 @@ export default {
     border-radius: 100%;
     background-color: rgb(74, 58, 255, 0.15);
     margin-right: 23px;
+    padding: 11px;
+
+    @media (max-width: 767px) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  &__elem-icon-elem {
+    width: 100%;
   }
 
   &__elem-title {

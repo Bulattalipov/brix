@@ -274,6 +274,10 @@ export default {
       grid-template-columns: repeat(1, 1fr);
       margin-top: 35px;
     }
+
+    @media (max-width: 575px) {
+      gap: 22px;
+    }
   }
 }
 

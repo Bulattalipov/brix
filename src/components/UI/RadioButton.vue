@@ -64,6 +64,10 @@ export default {
     transition: border 0.4s;
     user-select: none;
     cursor: pointer;
+
+    @media (max-width: 767px) {
+      height: 90px;
+    }
   }
 
   &__elem-circle {
