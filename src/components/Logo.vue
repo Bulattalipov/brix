@@ -30,6 +30,10 @@ export default {
     @media (max-width: 767px) {
       width: 235px;
     }
+
+    @media (max-width: 575px) {
+      width: 170px;
+    }
   }
 }
 </style>

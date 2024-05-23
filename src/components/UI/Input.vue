@@ -69,6 +69,10 @@ export default {
     line-height: 111%;
     color: var(--neutral-800);
     margin-bottom: 18px;
+
+    @media (max-width: 575px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__inner {
@@ -85,6 +89,10 @@ export default {
     padding: 21px 55px 24px 20px;
     border: 2px solid transparent;
     font-size: 18px;
+
+    @media (max-width: 575px) {
+      padding: 16px 55px 17px 20px;
+    }
 
     &:hover {
       box-shadow: 0 2px 6px 0 rgba(94, 92, 247, 0.07);

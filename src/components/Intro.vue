@@ -215,6 +215,10 @@ export default {
   align-items: center;
   margin: 56px auto 100px;
 
+  @media (max-width: 767px) {
+    margin: 36px auto 70px;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 34px;
@@ -243,7 +247,7 @@ export default {
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    padding: 30px 30px 60px;
+    padding: 30px 20px;
   }
 }
 

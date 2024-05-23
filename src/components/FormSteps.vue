@@ -46,6 +46,8 @@ export default {
 
   @media (max-width: 575px) {
     gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
   }
 
   &__item {

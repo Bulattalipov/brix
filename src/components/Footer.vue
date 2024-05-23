@@ -30,6 +30,10 @@ export default {
   border-top: 1px solid var(--neutral-400);
   padding: 57px 0;
 
+  @media (max-width: 575px) {
+    padding: 30px 0;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -39,6 +43,10 @@ export default {
     @media (max-width: 1199px) {
       flex-direction: column-reverse;
       gap: 40px;
+    }
+
+    @media (max-width: 575px) {
+      gap: 30px;
     }
   }
 
@@ -54,6 +62,10 @@ export default {
     line-height: 167%;
     color: var(--neutral-600);
     margin-top: 18px;
+
+    @media (max-width: 1199px) {
+      text-align: center;
+    }
   }
 
   .input {
