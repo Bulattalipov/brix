@@ -4,7 +4,6 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
     },
     inputType: {
       type: String,
@@ -32,8 +31,16 @@ export default {
   },
   methods: {
     onChangeInputs(e) {
+      if (e.target.type === 'tel') {
+        e.target.value = e.target.value.replace(/\D+/g, '');
+      }
+
       let currentContactDetals = this.contactDetails;
-      currentContactDetals[this.title] = e.target.value;
+      if (e.target.value !== '') {
+        currentContactDetals[this.title] = e.target.value;
+      } else {
+        delete currentContactDetals[this.title];
+      }
       this.$emit('update:contactDetails', currentContactDetals);
     },
   },

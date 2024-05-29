@@ -20,7 +20,7 @@ export default {
       name="budget"
       :value="title"
       :checked="projectBudget === title"
-      @change="$emit('update:projectBudget', $event.target.value)"
+      @change="$emit('projectBudget', $event.target.value)"
     />
     <div class="radio-button__elem">
       <div class="radio-button__elem-circle"></div>

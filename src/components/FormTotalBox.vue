@@ -10,17 +10,23 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      box: {
+        img: 'check.svg',
+        title: 'Submit your quote request',
+        desc: 'Please review all the information you previously typed in the past steps, and if all is okay, submit your message to receive a project quote in 24 - 48 hours.',
+      },
+    };
+  },
 };
 </script>
 
 <template>
   <div class="form-total-box">
-    <img class="form-total-box__img" src="/assets/img/check.svg" alt="" />
-    <div class="form-total-box__title">Submit your quote request</div>
-    <div class="form-total-box__desc">
-      Please review all the information you previously typed in the past steps, and if all is okay,
-      submit your message to receive a project quote in 24 - 48 hours.
-    </div>
+    <img class="form-total-box__img" :src="'/assets/img/' + box.img" alt="" />
+    <div class="form-total-box__title">{{ box.title }}</div>
+    <div class="form-total-box__desc">{{ box.desc }}</div>
     <Button text="Submit" @click="onSentData"></Button>
   </div>
 </template>

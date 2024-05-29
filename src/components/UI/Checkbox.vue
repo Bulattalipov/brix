@@ -19,15 +19,16 @@ export default {
     onChecked(e) {
       const value = e.target.value;
       if (this.ourServices.includes(value)) {
-        const checkboxArray = this.ourServices.filter((item) => item !== value);
-        this.$emit('update:ourServices', checkboxArray);
+        let checkboxArray = this.ourServices.filter((item) => item !== value);
+        this.$emit('ourServices', checkboxArray);
       } else {
-        const checkboxArray = this.ourServices;
+        let checkboxArray = this.ourServices;
         checkboxArray.push(value);
-        this.$emit('update:ourServices', checkboxArray);
+        this.$emit('ourServices', checkboxArray);
       }
     },
   },
+  // emits: ['update:ourServices'],
 };
 </script>
 
