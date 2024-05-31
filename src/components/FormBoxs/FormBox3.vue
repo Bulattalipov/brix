@@ -39,10 +39,12 @@ export default {
   },
   methods: {
     assignmentParameterRadioButton() {
-      let currentBudget = this.box.radioButtons
-        .map((item) => (item.checked ? item.title : ''))
-        .filter((elem) => elem);
-      this.$emit('update:projectBudget', currentBudget[0]);
+      if (this.projectBudget === '') {
+        let currentBudget = this.box.radioButtons
+          .map((item) => (item.checked ? item.title : ''))
+          .filter((elem) => elem);
+        this.$emit('update:projectBudget', currentBudget[0]);
+      }
     },
     changeCurrentBudget(elem) {
       this.$emit('update:projectBudget', elem);

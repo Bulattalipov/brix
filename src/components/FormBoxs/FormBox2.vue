@@ -46,10 +46,12 @@ export default {
   },
   methods: {
     assignmentParameterCheckbox() {
-      let checkedArray = this.box.checkboxs
-        .map((item) => (item.checked ? item.title : ''))
-        .filter((elem) => elem);
-      this.ourServices.push(...checkedArray);
+      if (this.ourServices.length === 0) {
+        let checkedArray = this.box.checkboxs
+          .map((item) => (item.checked ? item.title : ''))
+          .filter((elem) => elem);
+        this.ourServices.push(...checkedArray);
+      }
     },
     changeOurServices(elem) {
       this.$emit('update:ourServices', elem);

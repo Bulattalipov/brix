@@ -39,6 +39,10 @@ export default {
     onSentData() {
       localStorage.setItem('dataToSend', JSON.stringify(this.dataToSend));
       console.log('GOOD SENT');
+
+      this.dataToSend.contactDetails = {};
+      this.dataToSend.ourServices = [];
+      this.dataToSend.projectBudget = '';
     },
   },
 };
@@ -54,19 +58,24 @@ export default {
       </p>
       <form class="form-main" @submit.prevent="onSentData">
         <FormSteps :activeStep="activeStep" :numberSteps="numberSteps" />
-        <FormBox1 v-show="activeStep === 1" v-model:contact-details="dataToSend.contactDetails" />
-        <FormBox2 v-show="activeStep === 2" v-model:our-services="dataToSend.ourServices" />
-        <FormBox3 v-show="activeStep === 3" v-model:project-budget="dataToSend.projectBudget" />
+        <FormBox1 v-if="activeStep === 1" v-model:contact-details="dataToSend.contactDetails" />
+        <FormBox2 v-if="activeStep === 2" v-model:our-services="dataToSend.ourServices" />
+        <FormBox3 v-if="activeStep === 3" v-model:project-budget="dataToSend.projectBudget" />
         <FormTotalBox v-if="activeStep === 4" :onSentData="this.onSentData" />
       </form>
-      <div v-if="Object.keys(dataToSend.contactDetails).length === 4" class="buttons">
+      <div class="buttons">
         <Button
           v-show="activeStep > 1"
           text="Previous step"
           :light="true"
           @click="onPrevStep"
         ></Button>
-        <Button v-show="activeStep !== 4" text="Next step" @click="onNextStep"></Button>
+        <Button
+          :disabled="Object.keys(dataToSend.contactDetails).length !== 4"
+          v-show="activeStep !== 4"
+          text="Next step"
+          @click="onNextStep"
+        ></Button>
       </div>
     </div>
   </div>

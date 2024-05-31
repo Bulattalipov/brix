@@ -45,6 +45,13 @@ export default {
     },
   },
   emits: ['update:contactDetails'],
+  computed: {
+    checkContactDetails() {
+      if (this.contactDetails) {
+        return this.contactDetails[this.title];
+      }
+    },
+  },
 };
 </script>
 
@@ -57,6 +64,7 @@ export default {
         :type="inputType"
         :placeholder="placeholder"
         @input="onChangeInputs"
+        :value="checkContactDetails"
       />
       <img
         v-if="imgName"
